@@ -18,34 +18,22 @@ body {
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* --- Header & Navigation (下線アニメーション) --- */
-.topbar { height: 6px; background: #8C1D40; }
-.site-header { background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; max-width: 1200px; margin: 0 auto; }
-.univ-logo-img { height: 45px; width: auto; }
-.course-text { border-left: 1px solid #8C1D40; margin-left: 12px; padding-left: 12px; display: flex; align-items: baseline; gap: 8px; }
-.dept-name { font-weight: 700; color: #8C1D40; font-size: 1.1rem; }
+/* --- Header Layout --- */
+.topbar { height: 4px; background: #8C1D40; }
+.site-header { background: #fff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1240px; margin: 0 auto; padding: 0 30px; }
+.logo-area { display: flex; align-items: center; }
+.univ-logo-img { height: 50px; width: auto; display: block; }
+.course-title-group { border-left: 1px solid #d1d1d1; margin-left: 15px; padding-left: 15px; display: flex; flex-direction: column; justify-content: center; line-height: 1.2; }
+.dept-name { font-family: "Noto Serif JP", serif; font-size: 18px; font-weight: 700; color: #333; letter-spacing: 0.05em; margin: 0; }
+.course-name-sub { font-family: "Noto Sans JP", sans-serif; font-size: 10px; font-weight: 700; color: #8C1D40; margin-top: 2px; letter-spacing: 0.1em; }
 
-.main-nav ul { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
-.main-nav a {
-  font-weight: 600;
-  position: relative;
-  padding: 5px 0;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.main-nav a:hover { color: #8C1D40 !important; }
-.main-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: #8C1D40;
-  transition: width 0.3s ease;
-}
+/* --- Navigation --- */
+.main-nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+.main-nav a { font-family: "Noto Serif JP", serif; font-size: 16px; font-weight: 500; position: relative; padding: 5px 0; text-decoration: none; color: #333; }
+.main-nav a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 1.5px; background: #8C1D40; transition: width 0.3s ease; }
 .main-nav a:hover::after { width: 100%; }
+.main-nav a:hover { color: #8C1D40; }
 
 /* --- Hero --- */
 .hero { position: relative; height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
