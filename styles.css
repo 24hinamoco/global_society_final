@@ -1,18 +1,11 @@
 /* --- Global & Fonts --- */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif; color: #333; line-height: 1.8; background-color: #fff; }
 
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
-  color: #333;
-  line-height: 1.8;
-  background-color: #fff;
-}
-
-/* 明朝体の適用 */
-.dept-name, .course-name, .main-nav a, .hero h1, .hero .lead, .section-title, .section-title-ja, .faculty-name, .year-btn, .seminar-title, .footer-dept {
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+/* 明朝体が必要な要素をまとめて管理 */
+.dept-name, .course-name, .course-name-sub, .main-nav a, .hero h1, .hero .lead, .section-title, .section-title-ja, .faculty-name, .year-btn, .seminar-title, .footer-dept, .prof-link { 
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; 
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
@@ -25,12 +18,12 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 .logo-area { display: flex; align-items: center; }
 .univ-logo-img { height: 50px; width: auto; display: block; }
 .course-title-group { border-left: 1px solid #d1d1d1; margin-left: 15px; padding-left: 15px; display: flex; flex-direction: column; justify-content: center; line-height: 1.2; }
-.dept-name { font-family: "Noto Serif JP", serif; font-size: 18px; font-weight: 700; color: #8C1D40; letter-spacing: 0.05em; margin: 0; }
-.course-name-sub { font-family: "Noto Serif JP", serif; font-size: 9px; font-weight: 700; color: #888; margin-top: 2px; letter-spacing: 0.1em; }
+.dept-name { font-size: 18px; font-weight: 700; color: #8C1D40; letter-spacing: 0.05em; }
+.course-name-sub { font-size: 9px; font-weight: 700; color: #888; margin-top: 2px; letter-spacing: 0.1em; }
 
 /* --- Navigation --- */
 .main-nav ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
-.main-nav a { font-family: "Noto Serif JP", serif; font-size: 16px; font-weight: 500; position: relative; padding: 5px 0; text-decoration: none; color: #333; }
+.main-nav a { font-size: 16px; font-weight: 500; position: relative; padding: 5px 0; color: #333; }
 .main-nav a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 1.5px; background: #8C1D40; transition: width 0.3s ease; }
 .main-nav a:hover::after { width: 100%; }
 .main-nav a:hover { color: #8C1D40; }
@@ -44,27 +37,31 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 .btn { display: inline-block; padding: 16px 40px; background: #8C1D40; color: #fff !important; font-weight: bold; border-radius: 4px; }
 .btn.ghost { background: rgba(255, 255, 255, 0.15); border: 1px solid #fff; margin-left: 15px; }
 
-/* --- News --- */
+/* --- News Section --- */
 .news-flex-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.news-card-v2 { background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; display: block; }
+.news-card-v2 { background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; display: block; transition: transform 0.3s, box-shadow 0.3s, opacity 0.2s; }
 .news-card-v2:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(140, 29, 64, 0.15); }
 .news-card-v2:active { opacity: 0.6; }
+.news-card-content { text-align: center; padding: 20px 15px; }
 
-/* --- Graduation Thesis (浮き出るカードデザイン) --- */
-.seminar-card {
-  background: #fff;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  overflow: hidden;
-  border: none;
-}
-.seminar-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(140, 29, 64, 0.12);
-  background-color: #fffbfc;
-}
+/* --- News More Button --- */
+.news-more-btn-area { text-align: center; margin-top: 50px; }
+.btn-news-more { display: inline-block; padding: 15px 50px; background: #8C1D40; color: #fff !important; font-weight: 700; border-radius: 4px; border: 2px solid #8C1D40; transition: transform 0.3s ease, opacity 0.2s; }
+.btn-news-more:hover { transform: scale(1.1); }
+.btn-news-more:active { opacity: 0.7; }
+
+/* --- Faculty Section --- */
+.faculty-cards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.faculty-card-v3 { background: #fff; width: calc(33.333% - 20px); min-width: 300px; padding: 40px 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); text-align: center; transition: transform 0.3s ease; }
+.faculty-name { font-size: 22px; font-weight: 700; margin: 20px 0 5px; color: #8C1D40; }
+.faculty-seminar { font-size: 15px; font-weight: 500; color: #666; margin-bottom: 15px; }
+.faculty-specialty { font-size: 14px; line-height: 1.8; color: #444; text-align: left; margin-bottom: 25px; word-break: break-all; }
+.prof-link { font-size: 9px; color: #888; font-weight: 500; }
+.prof-link:hover, .prof-link:active { color: #8C1D40 !important; }
+
+/* --- Graduation Thesis --- */
+.seminar-card { background: #fff; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s ease; overflow: hidden; }
+.seminar-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(140, 29, 64, 0.12); background-color: #fffbfc; }
 .seminar-summary { padding: 30px 40px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; outline: none; }
 .seminar-summary::-webkit-details-marker { display: none; }
 .seminar-title { font-size: 1.4rem; font-weight: 700; color: #222; margin-bottom: 4px; }
@@ -73,90 +70,18 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 .seminar-card[open] .toggle-icon { transform: rotate(45deg); color: #8C1D40; }
 .seminar-details { padding: 0 40px 30px; border-top: 1px solid #f9f9f9; }
 
-/* --- Section Layout --- */
+/* --- Basic Layout & Footer --- */
 .section { padding: 100px 0; }
 .section.alt { background: #f9f9f7; }
 .section-title { color: #8C1D40; font-size: 2.2rem; text-align: center; margin-bottom: 60px; font-weight: 700; }
-
-/* --- Footer --- */
 .site-footer { background-color: #f9f9f7; padding-top: 60px; border-top: 1px solid #eee; }
 .footer-bottom { background-color: #8C1D40; color: #fff; text-align: center; padding: 20px 0; }
 
-/* --- Mobile --- */
-@media (max-width: 768px) {
+/* --- Responsive (Mobile) --- */
+@media (max-width: 900px) {
   .header-inner { flex-direction: column; gap: 15px; }
   .main-nav ul { gap: 15px; font-size: 0.85rem; }
   .hero h1 { font-size: 1.8rem; }
   .btn { width: 100%; margin: 5px 0 !important; }
-}
-/* 教員紹介カード全体のコンテナ */
-.faculty-cards-container {
-  display: flex;
-  flex-wrap: wrap; /* 折り返しを許可 */
-  justify-content: center; /* 中央寄せ（これで下段2人が真ん中に来ます） */
-  gap: 30px; /* カード同士の間隔 */
-}
-
-/* 浮き出るカードのデザイン */
-.faculty-card-v3 {
-  background: #fff;
-  width: calc(33.333% - 20px); /* 3人並びの計算 */
-  min-width: 300px; /* スマホで小さくなりすぎないよう */
-  padding: 40px 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 影で浮き出し効果 */
-  text-align: center;
-  transition: transform 0.3s ease; /* 動きを滑らかに */
-}
-
-/* 先生の名前（ゴシック体の指定があればそれに従います） */
-.faculty-name {
-  font-size: 22px;
-  font-weight: 700;
-  margin: 20px 0 5px;
-  color: #8C1D40; /* スクリーンショット2枚目に合わせえんじ色に */
-}
-
-/* 演習名 */
-.faculty-seminar {
-  font-size: 15px;
-  font-weight: 500;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-/* 専門分野の文章（改行が綺麗に見えるよう調整） */
-.faculty-specialty {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #444;
-  text-align: left; /* 左寄せにして読みやすく */
-  margin-bottom: 25px;
-  word-break: break-all; /* 変な隙間が空かないように */
-}
-
-/* 教員紹介リンクエリア */
-.faculty-link-area {
-  margin-top: auto;
-}
-
-/* 「教員紹介 ＞」のリンク文字 */
-.prof-link {
-  font-size: 9px; /* 少し小さめに設定 */
-  color: #888; /* 最初は控えめなグレー */
-  text-decoration: none;
-  transition: color 0.3s;
-  font-weight: 500;
-}
-
-/* クリック時（およびマウスホバー時）にえんじ色に変化 */
-.prof-link:hover, .prof-link:active {
-  color: #8C1D40 !important;
-}
-
-/* スマホ対応：1列に並べる */
-@media (max-width: 900px) {
-  .faculty-card-v3 {
-    width: 100%;
-  }
+  .faculty-card-v3 { width: 100%; }
 }
