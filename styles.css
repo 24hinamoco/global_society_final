@@ -101,3 +101,74 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
   .hero h1 { font-size: 1.8rem; }
   .btn { width: 100%; margin: 5px 0 !important; }
 }
+/* 教員紹介カード全体のコンテナ */
+.faculty-cards-container {
+  display: flex;
+  flex-wrap: wrap; /* 折り返しを許可 */
+  justify-content: center; /* 中央寄せ（これで下段2人が真ん中に来ます） */
+  gap: 30px; /* カード同士の間隔 */
+}
+
+/* 浮き出るカードのデザイン */
+.faculty-card-v3 {
+  background: #fff;
+  width: calc(33.333% - 20px); /* 3人並びの計算 */
+  min-width: 300px; /* スマホで小さくなりすぎないよう */
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 影で浮き出し効果 */
+  text-align: center;
+  transition: transform 0.3s ease; /* 動きを滑らかに */
+}
+
+/* 先生の名前（ゴシック体の指定があればそれに従います） */
+.faculty-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 20px 0 5px;
+  color: #8C1D40; /* スクリーンショット2枚目に合わせえんじ色に */
+}
+
+/* 演習名 */
+.faculty-seminar {
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* 専門分野の文章（改行が綺麗に見えるよう調整） */
+.faculty-specialty {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  text-align: left; /* 左寄せにして読みやすく */
+  margin-bottom: 25px;
+  word-break: break-all; /* 変な隙間が空かないように */
+}
+
+/* 教員紹介リンクエリア */
+.faculty-link-area {
+  margin-top: auto;
+}
+
+/* 「教員紹介 ＞」のリンク文字 */
+.prof-link {
+  font-size: 13px; /* 少し小さめに設定 */
+  color: #999; /* 最初は控えめなグレー */
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+/* クリック時（およびマウスホバー時）にえんじ色に変化 */
+.prof-link:hover, .prof-link:active {
+  color: #8C1D40 !important;
+}
+
+/* スマホ対応：1列に並べる */
+@media (max-width: 900px) {
+  .faculty-card-v3 {
+    width: 100%;
+  }
+}
