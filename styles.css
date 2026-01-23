@@ -50,14 +50,33 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 .btn-news-more:hover { transform: scale(1.1); }
 .btn-news-more:active { opacity: 0.7; }
 
-/* --- Faculty Section --- */
-.faculty-cards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-.faculty-card-v3 { background: #fff; width: calc(33.333% - 20px); min-width: 300px; padding: 40px 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); text-align: center; transition: transform 0.3s ease; }
-.faculty-name { font-size: 22px; font-weight: 700; margin: 20px 0 5px; color: #8C1D40; }
-.faculty-seminar { font-size: 15px; font-weight: 500; color: #666; margin-bottom: 15px; }
-.faculty-specialty { font-size: 14px; line-height: 1.8; color: #444; text-align: left; margin-bottom: 25px; word-break: break-all; }
-.prof-link { font-size: 9px; color: #888; font-weight: 500; }
-.prof-link:hover, .prof-link:active { color: #8C1D40 !important; }
+/* --- Course Section (Compact & Design) --- */
+#about { position: relative; overflow: hidden; padding: 100px 0; }
+
+/* 背景の半透明巨大文字 */
+.bg-scroll-text {
+  position: absolute; top: 50%; left: 5%; transform: translateY(-50%);
+  font-size: 10vw; font-weight: 900; color: rgba(140, 29, 64, 0.05); /* 半透明えんじ */
+  white-space: nowrap; z-index: 0; pointer-events: none;
+}
+
+/* 白背景のカード部分 */
+.about-container {
+  position: relative; z-index: 1; max-width: 900px; margin: 0 auto;
+  background: #fff; padding: 60px 50px; border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+/* 本文スタイル */
+.about-text-main { font-size: 1.2rem; line-height: 2; font-weight: 500; color: #333; margin-bottom: 25px; }
+.about-divider { width: 60px; height: 3px; background: #8C1D40; margin-bottom: 25px; }
+.about-text-sub { font-size: 1.05rem; line-height: 1.8; color: #555; }
+
+/* モバイル調整 */
+@media (max-width: 768px) {
+  .about-container { padding: 40px 25px; }
+  .bg-scroll-text { font-size: 15vw; top: 25%; }
+}
 
 /* --- Graduation Thesis --- */
 .seminar-card { background: #fff; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s ease; overflow: hidden; }
