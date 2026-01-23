@@ -52,31 +52,14 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 /* --- Course Section (Compact & Design) --- */
 #about { position: relative; overflow: hidden; padding: 100px 0; }
-
-/* 背景の半透明巨大文字 */
-.bg-scroll-text {
-  position: absolute; top: 50%; left: 5%; transform: translateY(-50%);
-  font-size: 10vw; font-weight: 900; color: rgba(140, 29, 64, 0.05); /* 半透明えんじ */
-  white-space: nowrap; z-index: 0; pointer-events: none;
-}
-
-/* 白背景のカード部分 */
-.about-container {
-  position: relative; z-index: 1; max-width: 900px; margin: 0 auto;
-  background: #fff; padding: 60px 50px; border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-}
-
-/* 本文スタイル */
+.bg-scroll-text { position: absolute; top: 50%; left: 2%; transform: translateY(-50%); font-size: 14vw; line-height: 0.85; font-weight: 900; color: rgba(140, 29, 64, 0.15); white-space: nowrap; z-index: 0; pointer-events: none; text-align: left; font-family: sans-serif; }
+.about-container { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; background: #fff; padding: 60px 50px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04); }
 .about-text-main { font-size: 1.2rem; line-height: 2; font-weight: 500; color: #333; margin-bottom: 25px; }
 .about-divider { width: 60px; height: 3px; background: #8C1D40; margin-bottom: 25px; }
 .about-text-sub { font-size: 1.05rem; line-height: 1.8; color: #555; }
 
-/* モバイル調整 */
-@media (max-width: 768px) {
-  .about-container { padding: 40px 25px; }
-  .bg-scroll-text { font-size: 15vw; top: 25%; }
-}
+/* Mobile Adjustment */
+@media (max-width: 768px) { .about-container { padding: 40px 25px; } .bg-scroll-text { font-size: 18vw; top: 20%; left: 1%; } }
 
 /* --- Faculty Section --- */
 .faculty-cards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
