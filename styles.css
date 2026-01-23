@@ -78,6 +78,15 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
   .bg-scroll-text { font-size: 15vw; top: 25%; }
 }
 
+/* --- Faculty Section --- */
+.faculty-cards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.faculty-card-v3 { background: #fff; width: calc(33.333% - 20px); min-width: 300px; padding: 40px 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); text-align: center; transition: transform 0.3s ease; }
+.faculty-name { font-size: 22px; font-weight: 700; margin: 20px 0 5px; color: #8C1D40; }
+.faculty-seminar { font-size: 15px; font-weight: 500; color: #666; margin-bottom: 15px; }
+.faculty-specialty { font-size: 14px; line-height: 1.8; color: #444; text-align: left; margin-bottom: 25px; word-break: break-all; }
+.prof-link { font-size: 9px; color: #888; font-weight: 500; }
+.prof-link:hover, .prof-link:active { color: #8C1D40 !important; }
+
 /* --- Graduation Thesis --- */
 .seminar-card { background: #fff; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s ease; overflow: hidden; }
 .seminar-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(140, 29, 64, 0.12); background-color: #fffbfc; }
