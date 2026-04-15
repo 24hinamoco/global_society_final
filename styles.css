@@ -228,3 +228,19 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* 写真のサイズ調整と丸抜き */
+.prof-img img {
+  width: 160px;       /* 好きなサイズに調整してください（元より小さめ） */
+  height: 160px;      /* 幅と同じ数値にする */
+  object-fit: cover;  /* 写真が歪まないように調整 */
+  border-radius: 50%; /* これで正円になります */
+  margin: 0 auto;     /* 真ん中に配置 */
+  display: block;
+  border: 3px solid #f0f0f0; /* 薄い枠線を入れると清潔感が出ます（お好みで） */
+}
+
+/* カード内のテキスト配置を整える */
+.faculty-card-v3 {
+  padding-top: 30px;  /* 上の余白を少し調整 */
+}
